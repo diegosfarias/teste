@@ -106,7 +106,7 @@ catalog_mtps <-
   function( output_dir , ... ){
     
     # define main path
-    url_path <- file.path( "ftp://ftp.mtps.gov.br/pdet/microdados" , RCurl::curlEscape( c( "CAGED" , "RAIS" , "CAGED_AJUSTES" , "NOVO CAGED" ) )[-4] , "" )
+    url_path <- file.path( "ftp://ftp.mtps.gov.br/pdet/microdados/" , RCurl::curlEscape( c( "CAGED" , "RAIS" , "CAGED_AJUSTES" , "NOVO CAGED" ) )[-4] , "" )
     
     # scrape files
     file_list <- recursive_ftp_scrape( url_path , max.iter = 4 )
