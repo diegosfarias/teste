@@ -64,7 +64,7 @@ getlisting <- function( these_urls ) {
   library(future)
   plan( "multisession" )
   these_urls <- ifelse( grepl( "\\/$" , these_urls ) , these_urls , paste0( these_urls , "/" ) )
-  res <- future_lapply( these_urls , link_scrape )
+  res <- future( these_urls , link_scrape )
   res <- unlist( res )
   res <- res[ !grepl( "\\/EEC" , res ) ] # drop EEC folder
   is.file <- grepl( "\\." , basename( res ) , ignore.case = TRUE )
