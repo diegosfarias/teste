@@ -61,7 +61,7 @@ link_scrape <- function( x ) {
 
 getlisting <- function( these_urls ) {
   library(RCurl)
-  library(future.apply)
+  library(future)
   plan(multisession)
   options(future.seed = TRUE)
   these_urls <- ifelse( grepl( "\\/$" , these_urls ) , these_urls , paste0( these_urls , "/" ) )
